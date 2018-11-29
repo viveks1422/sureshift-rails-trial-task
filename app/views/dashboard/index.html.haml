@@ -1,0 +1,17 @@
+.dashboard
+	%h1="Welcome to #{@dasboard.try(:name)} dashboard"
+	%hr/
+	%p=@dasboard.try(:description).present? ? @dasboard.try(:description) : 'No dashboard description available'
+	//list of all jobs
+	-if @dasboard.lists.present?
+		-@dasboard.lists.each_with_index do |list, index|
+			%table
+				%thead
+					%th=index + 1
+					%th=list.name
+
+	-else
+		%h6 No data present.
+	%hr/
+	%p.text-center
+		=link_to "Create a new job posting","#"
