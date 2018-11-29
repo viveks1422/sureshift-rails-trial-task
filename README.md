@@ -28,6 +28,6 @@ Things you may want to cover:
 
 * run `bundle exec sidekiq` to start sidekiq workers
 
-* goto browser and locate 'http://localhost:300'
+* goto browser and locate 'http://localhost:3000'
 
 * Cheers! all done
