@@ -1,0 +1,11 @@
+development:
+  trello_developer_public_key: 'your trello_developer_public_key'
+  trello_authorization_token: 'your trello_authorization_token'
+  trello_board_id: 'your trello_board_id'
+  redis_url: redis://localhost:6379/0
+
+production:
+  trello_developer_public_key: 'your trello_developer_public_key'
+  trello_authorization_token: 'your trello_authorization_token'
+  trello_board_id: 'your trello_board_id'
+  redis_url: redis://localhost:6379/0
