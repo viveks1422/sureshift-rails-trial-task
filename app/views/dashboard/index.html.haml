@@ -1,17 +1,32 @@
-.dashboard
-	%h1="Welcome to #{@dasboard.try(:name)} dashboard"
-	%hr/
-	%p=@dasboard.try(:description).present? ? @dasboard.try(:description) : 'No dashboard description available'
-	//list of all jobs
-	-if @dasboard.lists.present?
-		-@dasboard.lists.each_with_index do |list, index|
-			%table
+.col-lg-12
+	.dashboard
+		%h1="Welcome to dashboard!!"
+		%hr/
+		%h3 Job postings
+		//list of job postings
+		-if @job_postings.present?
+			%table.table.table-striped
 				%thead
-					%th=index + 1
-					%th=list.name
+					%th Sno.
+					%th ID
+					%th Title
+					%th Descrition
+					%th Closing date
+					%th Expired
+					%th Applicants list
+				-@job_postings.each_with_index do |job_posting, index|
+					%tbody
+						%tr
+							%td=index + 1
+							%th=job_posting.id
+							%td=job_posting.title
+							%td=job_posting.description
+							%td=job_posting.closing_date
+							%td=job_posting.expired?
+							%td=link_to "View applicants", job_posting_job_applications_path(job_posting)
 
-	-else
-		%h6 No data present.
-	%hr/
-	%p.text-center
-		=link_to "Create a new job posting","#"
+		-else
+			.alert-alert-info No job posting yet.
+		%hr/
+		%p.text-center
+			=link_to "Create a new job posting",new_job_posting_path, class: 'btn btn-info'

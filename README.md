@@ -1,24 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a test application with rails 5
 
 Things you may want to cover:
 
-* Ruby version
+* Install Ruby version 2.4.0
 
-* System dependencies
+* Install Rails version 5.2.1
 
-* Configuration
+* Install redis-server
 
-* Database creation
+* Fill ENV vars within application.yml
+	1. trello_developer_public_key: `your trello_developer_public_key`
+	2. trello_developer_public_key: `your trello_authorization_token`
+	3. trello_developer_public_key: `your trello_board_id`
+	4. redis_url: `your local redis url`
 
-* Database initialization
+* goto project root directory and run `bundle install` to install gem dependencies
 
-* How to run the test suite
+* run `rails db:create`
 
-* Services (job queues, cache servers, search engines, etc.)
+* run `rails db:migrate`
 
-* Deployment instructions
+* run `rails server` to run puma rack server
 
-* ...
+* goto browser and locate 'http://localhost:300'
+
+* Cheers! all done

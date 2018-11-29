@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2018_11_29_054842) do
   create_table "job_applications", force: :cascade do |t|
     t.string "candidate_name"
     t.string "candidate_email"
+    t.string "trello_id"
     t.text "cover_letter"
     t.integer "job_posting_id"
     t.datetime "created_at", null: false
@@ -26,6 +27,7 @@ ActiveRecord::Schema.define(version: 2018_11_29_054842) do
     t.string "title"
     t.text "description"
     t.date "closing_date"
+    t.string "trello_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

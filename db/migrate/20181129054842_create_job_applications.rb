@@ -3,6 +3,7 @@ class CreateJobApplications < ActiveRecord::Migration[5.2]
     create_table :job_applications do |t|
       t.string :candidate_name
       t.string :candidate_email
+      t.string :trello_id
       t.text :cover_letter
       t.references :job_posting, index: true
 

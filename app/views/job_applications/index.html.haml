@@ -1,0 +1,31 @@
+.col-lg-12
+	.dashboard
+		%h1="#{@job_posting.title} application list"
+		%hr/
+		//list of job applications
+		-if @job_applications.present?
+			%table.table.table-striped
+				%thead
+					%th Sno.
+					%th ID
+					%th Candidate name
+					%th Candidate email
+					%th Cover letter
+					
+				-@job_applications.each_with_index do |job_application, index|
+					%tbody
+						%tr
+							%td=index + 1
+							%td=job_application.id
+							%td=job_application.candidate_name
+							%td=job_application.candidate_email
+							%td=job_application.cover_letter
+							
+
+		-else
+			.alert-alert-info No job applications yet.
+		%hr/
+		.text-center
+			=link_to "Back", root_path, class: 'btn btn-warning'
+			=link_to "Create new job application", new_job_posting_job_application_path(@job_posting), class: 'btn btn-info'
+		

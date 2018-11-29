@@ -1,0 +1,21 @@
+.col-lg-12
+	.dashboard
+		%h1="Create new job posting"
+		%hr/
+		%h2 Enter posting details
+		//form to create job posting
+		=form_for @job_posting do |job_posting|
+			.form-group.col-sm-12
+				=job_posting.label :title
+				=job_posting.text_field :title, class: 'form-control', placeholder: 'Enter posting title'
+			.form-group.col-sm-12
+				=job_posting.label :description
+				=job_posting.text_area :description, class: 'form-control', placeholder: 'Enter posting description'
+			.form-group.col-sm-12
+				=job_posting.label :closing_date
+				=job_posting.date_field :closing_date, class: 'form-control', placeholder: 'Select posting end date'
+			%hr/
+			.form-group.col-sm-12
+				=link_to "Back",root_path, class: 'btn btn-warning'
+				=job_posting.submit class: 'btn btn-success'
+		

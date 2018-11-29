@@ -1,0 +1,22 @@
+.col-lg-12
+	.dashboard
+		%h1="Create new job posting"
+		%hr/
+		%h2 Enter job application details
+		%p
+			//form to create job posting
+			=form_for [@job_posting, @job_application] do |job_application|
+				.form-group.col-sm-12
+					=job_application.label :candidate_name
+					=job_application.text_field :candidate_name, class: 'form-control', placeholder: 'Enter candidate name'
+				.form-group.col-sm-12
+					=job_application.label :candidate_email
+					=job_application.email_field :candidate_email, class: 'form-control', placeholder: 'Enter candidate email'
+				.form-group.col-sm-12
+					=job_application.label :cover_letter
+					=job_application.text_area :cover_letter, class: 'form-control', placeholder: 'Enter cover letter here ..'
+				%hr/
+				.form-group.col-sm-12
+					=link_to "Back",job_posting_job_applications_path(@job_posting), class: 'btn btn-warning'
+					=job_application.submit class: 'btn btn-success'
+		

@@ -1,9 +1,9 @@
 class DashboardController < ApplicationController
   # action to fetch all trello dashboards
   def index
-  	@dasboard = Trello::Board.find(ENV['trello_board_id'])
+  	@job_postings = JobPosting.all
   	respond_to	do |format|
-  		format.html	
+  		format.html
   	end
   end
 end

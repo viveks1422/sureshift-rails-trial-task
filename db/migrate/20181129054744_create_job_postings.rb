@@ -4,6 +4,7 @@ class CreateJobPostings < ActiveRecord::Migration[5.2]
       t.string :title
       t.text :description
       t.date :closing_date
+      t.string :trello_id
 
       t.timestamps
     end
